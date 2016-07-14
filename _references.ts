@@ -1,0 +1,10 @@
+﻿ /// <reference path="typings/tsd.d.ts" />
+/// <reference path="bower_components/wim_angular/src/Extensions/String.d.ts" />
+/// <reference path="bower_components/wim_angular/src/Models/Point.d.ts" />
+/// <reference path="bower_components/wim_angular/src/Models/Parameter.d.ts" />
+/// <reference path="bower_components/wim_angular/src/Services/Helpers/RequestInfo.d.ts" />
+/// <reference path="bower_components/wim_angular/src/Services/HTTPServiceBase.d.ts" />
+/// <reference path="bower_components/wim_angular/src/Services/SearchAPIService.d.ts" />
+/// <reference path="bower_components/wim_angular/src/Events/Delegate.d.ts" />
+/// <reference path="bower_components/wim_angular/src/Events/EventArgs.d.ts" />
+/// <reference path="bower_components/wim_angular/src/Events/EventHandler.d.ts" />
