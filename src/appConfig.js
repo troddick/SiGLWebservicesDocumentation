@@ -8,9 +8,9 @@ configuration.baseurls =
 
 configuration.resources =
     [
-        //#region agency (1)
+        //#region contact (1)
         {            
-            "name": "Agency",
+            "name": "Contact",
             "description": "The agency resource represents an agency that a member or source is an employee for.",
             "methods": [{
                 "type": "GET",
@@ -58,9 +58,9 @@ configuration.resources =
             ]
         },
         //#endregion 
-        //#region approval (2)
+        //#region data_host (2)
         {
-            "name": "Approval",
+            "name": "Data Host",
             "description": "The approval resource represents an approval that is applied to a hwm or data file once reviewed and deemed complete.",
             "methods": [{
                 "type": "GET",
@@ -107,59 +107,59 @@ configuration.resources =
             }]
         },
         //#endregion
-        //#region contact  (3)
-        {
-            "name": "Contact",
-            "description": "The contact resource represents an contact that can be added to a report.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/contacts{0}",
-                        "description": "This service returns a list of contacts. Requires authentication.",
-                        "id": "All Contacts",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/contacts/{1}{0}",
-                        "description": "This service returns a contact by it's ID. Requires authentication.",
-                        "id": "A Contact",
-                        "parameters": [
-                           { "name": "contactId", "type": "number", "description": "Id of contact requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/contacts{0}?reportmetric={1}&contacttype{2}",
-                        "description": "This service returns a contact for a report and by a contact type. Requires authentication.",
-                        "id": "Report Contact By Contact Type",
-                        "parameters": [
-                           { "name": "reportId", "type": "number", "description": "Id of the report", "value": "" },
-                           { "name": "contactTypeId", "type": "number", "description": "Id of the contact type", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/contacts{0}?reportmetric={1}",
-                        "description": "This service returns a list of contacts for a report. Requires authentication.",
-                        "id": "Report Contacts",
-                        "parameters": [
-                           { "name": "reportId", "type": "number", "description": "Id of report", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-               ]
-           }]
-        },
+        //#region data_manager  (3)
+        //{
+        //    "name": "Data Mananger",
+        //    "description": "The contact resource represents an contact that can be added to a report.",
+        //    "methods": [{
+        //        "type": "GET",
+        //        "uriList": [
+        //            {
+        //                "uri": "/contacts{0}",
+        //                "description": "This service returns a list of contacts. Requires authentication.",
+        //                "id": "All Contacts",
+        //                "parameters": [],
+        //                "availableMedia": [".xml", ".json"],
+        //                "selectedMedia": ".json"
+        //            },
+        //            {
+        //                "uri": "/contacts/{1}{0}",
+        //                "description": "This service returns a contact by it's ID. Requires authentication.",
+        //                "id": "A Contact",
+        //                "parameters": [
+        //                   { "name": "contactId", "type": "number", "description": "Id of contact requested", "value": "" }
+        //                ],
+        //                "availableMedia": [".xml", ".json"],
+        //                "selectedMedia": ".json"
+        //            },
+        //            {
+        //                "uri": "/contacts{0}?reportmetric={1}&contacttype{2}",
+        //                "description": "This service returns a contact for a report and by a contact type. Requires authentication.",
+        //                "id": "Report Contact By Contact Type",
+        //                "parameters": [
+        //                   { "name": "reportId", "type": "number", "description": "Id of the report", "value": "" },
+        //                   { "name": "contactTypeId", "type": "number", "description": "Id of the contact type", "value": "" }
+        //                ],
+        //                "availableMedia": [".xml", ".json"],
+        //                "selectedMedia": ".json"
+        //            },
+        //            {
+        //                "uri": "/contacts{0}?reportmetric={1}",
+        //                "description": "This service returns a list of contacts for a report. Requires authentication.",
+        //                "id": "Report Contacts",
+        //                "parameters": [
+        //                   { "name": "reportId", "type": "number", "description": "Id of report", "value": "" }
+        //                ],
+        //                "availableMedia": [".xml", ".json"],
+        //                "selectedMedia": ".json"
+        //            }
+        //       ]
+        //   }]
+        //},
         //#endregion
-        //#region contact type  (4)
+        //#region division  (4)
         {
-            "name": "Contact Type",
+            "name": "Division",
             "description": "The contact type resource represents a contact type that can be added to a contact.",
             "methods": [{
                 "type": "GET",
@@ -196,9 +196,9 @@ configuration.resources =
             }]
         },
         //#endregion
-        //#region county  (5)
+        //#region frequency_type  (5)
         {
-            "name": "Counties",
+            "name": "Frequency Type",
             "description": "The counties resource represents U.S. counties.",
             "methods": [{
                 "type": "GET",
@@ -255,9 +255,9 @@ configuration.resources =
             }]
         },
         //#endregion
-        //#region data file  (6)
+        //#region keyword  (6)
         {
-            "name": "Data Files",
+            "name": "Keyword",
             "description": "The data file resource represents data files associated with sensors.",
             "methods": [{
                 "type": "GET",
@@ -337,9 +337,9 @@ configuration.resources =
             }]
         },
         //#endregion
-        //#region deployment priority (7)
+        //#region lake (7)
         {
-            "name": "Deployment Priority",
+            "name": "Lake",
             "description": "The deployment priority resource represents deployment priorities that sites can have.",
             "methods": [{
                 "type": "GET",
@@ -376,9 +376,9 @@ configuration.resources =
             }]
         },
         //#endregion
-        //#region deployment type (8)
+        //#region media (8)
         {
-            "name": "Deployment Type",
+            "name": "Media Type",
             "description": "The deployment type resource represents deployment types that sensors can have.",
             "methods": [{
                 "type": "GET",
@@ -425,9 +425,9 @@ configuration.resources =
             }]
         },
         //#endregion
-        //#region event (9)
+        //#region objective_type (9)
         {
-            "name": "Event",
+            "name": "Objective Type",
             "description": "The event resource represents the event that sensor and hwms are created during.",
             "methods": [{
                 "type": "GET",
@@ -516,9 +516,9 @@ configuration.resources =
             }]
         },
         //#endregion
-        //#region event status (10)
+        //#region organization_system (10)
         {
-            "name": "Event Status",
+            "name": "Organization System",
             "description": "The event status resource represents event statuses that events can have.",
             "methods": [{
                 "type": "GET",
@@ -555,9 +555,9 @@ configuration.resources =
             }]
         },
         //#endregion
-        //#region event type (11)
+        //#region parameter (11)
         {
-            "name": "Event Type",
+            "name": "Parameter",
             "description": "The event type resource represents event types that events can have.",
             "methods": [{
                 "type": "GET",
@@ -594,9 +594,9 @@ configuration.resources =
             }]
         },
         //#endregion
-        //#region file (12)
+        //#region proj_status (12)
         {
-            "name": "File",
+            "name": "Project Status",
             "description": "The file resource represents files that can be uploaded at sites, objective points, hwms, and sensors.",
             "methods": [{
                 "type": "GET",
@@ -755,9 +755,9 @@ configuration.resources =
             }]
         },
         //#endregion
-        //#region file type (13)
+        //#region proj_duration (13)
         {
-            "name": "File Type",
+            "name": "Project Duration",
             "description": "The file type resource represents file types that files can have.",
             "methods": [{
                 "type": "GET",
@@ -794,9 +794,9 @@ configuration.resources =
             }]
         },
         //#endregion
-        //#region horizontal collect methods (14)
+        //#region project (14)
         {
-            "name": "Horizontal Collect Method",
+            "name": "Project",
             "description": "The horizontal collect method resource represents horizontal collect method that sites, objective points, and hwms can have.",
             "methods": [{
                 "type": "GET",
@@ -833,9 +833,9 @@ configuration.resources =
             }]
         },
         //#endregion
-        //#region horizontal datum (15)
+        //#region publication (15)
         {
-            "name": "Horizontal Datum",
+            "name": "Publication",
             "description": "The horizontal datum resource represents horizontal datum that sites, objective points, and hwms can have.",
             "methods": [{
                 "type": "GET",
@@ -872,9 +872,9 @@ configuration.resources =
             }]
         },
         //#endregion
-        //#region housing type (16)
+        //#region resource_type (16)
         {
-            "name": "Housing Type",
+            "name": "Resource Type",
             "description": "The housing type resource represents housing type that sensors can have.",
             "methods": [{
                 "type": "GET",
@@ -911,1224 +911,7 @@ configuration.resources =
             }]
         },
         //#endregion
-        //#region hwm (17)
-        {
-            "name": "HWM",
-            "description": "The hwm resource represents hwms that are found at site locations.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/hwms{0}",
-                        "description": "This service returns a list of hwms. If unauthorized, only approved hwms will be returned.",
-                        "id": "All HWMs",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    },
-                    {
-                        "uri": "/hwms/{1}{0}",
-                        "description": "This service returns a hwm by it's ID.",
-                        "id": "A HWM",
-                        "parameters": [
-                           { "name": "hwmId", "type": "number", "description": "Id of hwm requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    },
-                    {
-                        "uri": "/events/{1}/hwms{0}",
-                        "description": "This service returns a list of hwms found at an event. If unauthorized, only approved hwms will be returned.",
-                        "id": "Event HWMs",
-                        "parameters": [
-                           { "name": "eventId", "type": "number", "description": "Id of the event", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    },
-                    {
-                        "uri": "/sites/{1}/EventHWMs{0}?Event={2}",
-                        "description": "This service returns a list of hwms found at a site for an event. If unauthorized, only approved hwms will be returned.",
-                        "id": "Site Event HWMs",
-                        "parameters": [
-                            { "name": "siteId", "type": "number", "description": "Id of the site", "value": "" },
-                            { "name": "eventId", "type": "number", "description": "Id of the event", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    },
-                    {
-                        "uri": "/hwms{0}?IsApproved={1}&Event={2}&Member={3}&State={4}",
-                        "description": "This service returns a list of hwms that meet the passed-in parameters. If unauthorized, only approved hwms will be returned.",
-                        "id": "Approval HWMs",
-                        "parameters": [
-                           { "name": "appoved", "type": "boolean", "description": "True for hwms that are approved, false for those that are not", "value": "" },
-                           { "name": "eventId", "type": "number", "description": "Id of the event", "optional":true, "value": "" },
-                           { "name": "memberId", "type": "number", "description": "Id of the member that either flagged or surveyed", "optional": true, "value": "" },
-                           { "name": "stateAbbrev", "type": "string", "description": "State abbreviation", "optional": true, "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    },
-                    {
-                        "uri": "/approvals/{1}/hwms{0}",
-                        "description": "This service returns a list of hwms for this approval.",
-                        "id": "Approved HWMs",
-                        "parameters": [
-                           { "name": "approvalId", "type": "number", "description": "Id of the approval", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    },
-                    {
-                        "uri": "/members/{1}/hwms{0}",
-                        "description": "This service returns a list of hwms that were flagged or surveyed by the given member. If unauthorized, only approved hwms will be returned.",
-                        "id": "Member HWMs",
-                        "parameters": [
-                           { "name": "memberId", "type": "number", "description": "Id of the member", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    },
-                    {
-                        "uri": "/hwmqualities/{1}/hwms{0}",
-                        "description": "This service returns a list of hwms with a given hwm quality. If unauthorized, only approved hwms will be returned.",
-                        "id": "HWM Quality HWMs",
-                        "parameters": [
-                           { "name": "hwmQualId", "type": "number", "description": "Id of the hwm quality", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    },
-                    {
-                        "uri": "/hwmtypes/{1}/hwms{0}",
-                        "description": "This service returns a list of hwms with a given hwm type. If unauthorized, only approved hwms will be returned.",
-                        "id": "HWM Type HWMs",
-                        "parameters": [
-                           { "name": "hwmTypeId", "type": "number", "description": "Id of the hwm type", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    },
-                    {
-                        "uri": "/horizontalmethods/{1}/hwms{0}",
-                        "description": "This service returns a list of hwms with a given horizontal method. If unauthorized, only approved hwms will be returned.",
-                        "id": "Horizontal Method HWMs",
-                        "parameters": [
-                           { "name": "horizontalMethodId", "type": "number", "description": "Id of the horizontal method", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    },
-                    {
-                        "uri": "/verticalmethods/{1}/hwms{0}",
-                        "description": "This service returns a list of hwms with a given vertical method. If unauthorized, only approved hwms will be returned.",
-                        "id": "Vertical Method HWMs",
-                        "parameters": [
-                           { "name": "verticalMethodId", "type": "number", "description": "Id of the vertical method", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    },
-                    {
-                        "uri": "/sites/{1}/hwms{0}",
-                        "description": "This service returns a list of hwms at a given site. If unauthorized, only approved hwms will be returned.",
-                        "id": "Site HWMs",
-                        "parameters": [
-                           { "name": "siteId", "type": "number", "description": "Id of the site", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    },
-                    {
-                        "uri": "/VerticalDatums/{1}/hwms{0}",
-                        "description": "This service returns a list of hwms with a given vertical datum. If unauthorized, only approved hwms will be returned.",
-                        "id": "Vertical Datum HWMs",
-                        "parameters": [
-                           { "name": "verticalDatumId", "type": "number", "description": "Id of the vertical datum", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    },
-                    {
-                        "uri": "/markers/{1}/hwms{0}",
-                        "description": "This service returns a list of hwms with a given marker. If unauthorized, only approved hwms will be returned.",
-                        "id": "Marker HWMs",
-                        "parameters": [
-                           { "name": "markerId", "type": "number", "description": "Id of the marker", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    },
-                    {
-                        "uri": "/peaksummaries/{1}/hwms{0}",
-                        "description": "This service returns a list of hwms with a given peak summary. If unauthorized, only approved hwms will be returned.",
-                        "id": "Peak Summary HWMs",
-                        "parameters": [
-                           { "name": "peakSummaryId", "type": "number", "description": "Id of the peak summary", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    },
-                    {
-                        "uri": "/files/{1}/hwm{0}",
-                        "description": "This service returns a hwm that a given file was uploaded for. If unauthorized, only approved hwms will be returned.",
-                        "id": "File HWM",
-                        "parameters": [
-                           { "name": "fileId", "type": "number", "description": "Id of the file", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    },
-                    {
-                        "uri": "/HWMs/FilteredHWMs{0}?Event={1}&EventType={2}&EventStatus={3}"+
-                            "&States={4}&County={5}&HWMType={6}&HWMQuality={7}"+
-                            "&HWMEnvironment={8}&SurveyComplete={9}&StillWater={10}",
-                        "description": "This service returns a list of hwms that meet the passed-in parameters. If unauthorized, only approved hwms will be returned.",
-                        "id": "Filtered HWMs",
-                        "parameters": [
-                           { "name": "eventId", "type": "comma separated string", "description": "Comma separated list of event IDs (ex: '1,2,3' or '1')", "optional":true, "value": "" },
-                           { "name": "eventTypeIDs", "type": "comma separated string", "description": "Comma separated list of event type IDs", "optional": true, "value": "" },
-                           { "name": "eventStatusID", "type": "number", "description": "Id of the event status", "optional": true, "value": "" },
-                           { "name": "states", "type": "comma separated string", "description": "Comma separated list of state abbreviations", "optional": true, "value": "" },
-                           { "name": "counties", "type": "comma separated string", "description": "Comma separated list of county names (Include 'County' at the end, ex: 'Washington County')", "optional": true, "value": "" },
-                           { "name": "hwmTypeIDs", "type": "comma separated string", "description": "Comma separated list of hwm type IDs", "optional": true, "value": "" },
-                           { "name": "hwmQualIDs", "type": "comma separated string", "description": "Comma separated list of hwm quality IDs", "optional": true, "value": "" },
-                           { "name": "hwmEnvironment", "type": "string", "description": "Either 'Coastal' or 'Riverine'", "optional": true, "value": "" },
-                           { "name": "surveyComplete", "type": "boolean", "description": "True or false: surveyed or not", "optional": true, "value": "" },
-                           { "name": "stillWater", "type": "boolean", "description": "True or false: stillwater or not", "optional": true, "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region hwm quality (18)
-        {
-            "name": "HWM Quality",
-            "description": "The hwm quality resource represents a hwm quality that can be added to a hwm.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/hwmqualities{0}",
-                        "description": "This service returns a list of hwm qualities.",
-                        "id": "All HWM Qualities",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/hwmqualities/{1}{0}",
-                        "description": "This service returns a hwm quality by it's ID.",
-                        "id": "A HWM Quality",
-                        "parameters": [
-                           { "name": "hwmQualityId", "type": "number", "description": "Id of hwm quality requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/hwms/{1}/Quality{0}",
-                        "description": "This service returns a hwm quality for a hwm.",
-                        "id": "HWM HWM Quality",
-                        "parameters": [
-                           { "name": "hwmId", "type": "number", "description": "Id of the hwm", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region hwm type (19)
-        {
-            "name": "HWM Type",
-            "description": "The hwm type resource represents a hwm type that can be added to a hwm.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/hwmtypes{0}",
-                        "description": "This service returns a list of hwm types.",
-                        "id": "All HWM Types",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/hwmtypes/{1}{0}",
-                        "description": "This service returns a hwm type by it's ID.",
-                        "id": "A HWM Type",
-                        "parameters": [
-                           { "name": "hwmtypeId", "type": "number", "description": "Id of hwm type requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/hwms/{1}/type{0}",
-                        "description": "This service returns a hwm type for a hwm.",
-                        "id": "HWM HWM Type",
-                        "parameters": [
-                           { "name": "hwmId", "type": "number", "description": "Id of the hwm", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region instrument collection condition (20)
-        {
-            "name": "Instrument Collect Condition",
-            "description": "The instrument collect condition resource represents an instrument collection condition that can be added to a sensor.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/instrcollectconditions{0}",
-                        "description": "This service returns a list of instrument collection conditions.",
-                        "id": "All Instrument Collect Conditions",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/instrcollectconditions/{1}{0}",
-                        "description": "This service returns an instrument collection condition by it's ID.",
-                        "id": "An Instrument Collect Condition",
-                        "parameters": [
-                           { "name": "instCollectConditionId", "type": "number", "description": "Id of instrument collection condition requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/instruments/{1}/CollectCondition{0}",
-                        "description": "This service returns an instrument collection condition for a sensor.",
-                        "id": "Sensor Instrument Collection Condition",
-                        "parameters": [
-                           { "name": "sensorId", "type": "number", "description": "Id of the sensor", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region sensor  (21)
-        {
-            "name": "Sensor",
-            "description": "The sensor resource represents a sensor that can be deployed and retrieved at a site.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/instruments{0}",
-                        "description": "This service returns a list of sensors.",
-                        "id": "All Sensors",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/instruments/{1}{0}",
-                        "description": "This service returns a sensor by it's ID.",
-                        "id": "A Sensor",
-                        "parameters": [
-                           { "name": "sensorId", "type": "number", "description": "Id of sensor requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/files/{1}/instrument{0}",
-                        "description": "This service returns a sensor that the given file was uploaded for.",
-                        "id": "File Sensor",
-                        "parameters": [
-                           { "name": "fileId", "type": "number", "description": "Id of the file", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/instrumentstatus/{1}/instrument{0}",
-                        "description": "This service returns a sensor associated with an instrument status.",
-                        "id": "Instrument Status Sensor",
-                        "parameters": [
-                           { "name": "instrumentStatusId", "type": "number", "description": "Id of the instrument status", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/datafiles/{1}/instrument{0}",
-                        "description": "This service returns a sensor for a data file.",
-                        "id": "Data File Sensor",
-                        "parameters": [
-                           { "name": "dataFileId", "type": "number", "description": "Id of the data file", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/sites/{1}/instruments{0}",
-                        "description": "This service returns a list of sensors that were deployed at a site.",
-                        "id": "Site Sensors",
-                        "parameters": [
-                           { "name": "siteId", "type": "number", "description": "Id of the site", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/sensortypes/{1}/instruments{0}",
-                        "description": "This service returns a list of sensors with the given sensor type.",
-                        "id": "Sensor Type Sensors",
-                        "parameters": [
-                           { "name": "sensorTypeId", "type": "number", "description": "Id of the sensor type", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/sensorbrands/{1}/instruments{0}",
-                        "description": "This service returns a list of sensors with the given sensor brand.",
-                        "id": "Sensor Brand Sensors",
-                        "parameters": [
-                           { "name": "sensorBrandId", "type": "number", "description": "Id of the sensor brand", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/deploymenttypes/{1}/instruments{0}",
-                        "description": "This service returns a list of sensors with the given deployment type.",
-                        "id": "Deployment Type Sensors",
-                        "parameters": [
-                           { "name": "deploymentTypeId", "type": "number", "description": "Id of the deployment type", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/events/{1}/instruments{0}",
-                        "description": "This service returns a list of sensors that were deployed for an event.",
-                        "id": "Event Sensors",
-                        "parameters": [
-                           { "name": "eventId", "type": "number", "description": "Id of the event", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/sites/{1}/instruments{0}?Event={2}",
-                        "description": "This service returns a list of sensors deployed at a given site for an event.",
-                        "id": "Site Event Sensors",
-                        "parameters": [
-                           { "name": "siteId", "type": "number", "description": "Id of the site", "value": "" },
-                           { "name": "eventId", "type": "number", "description": "Id of the event", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/Instruments/FilteredInstruments{0}?Event={1}&EventType={2}&EventStatus={3}&States={4}&County={5}&CurrentStatus={6}&CollectionCondition={7}&DeploymentType={8}",
-                        "description": "This service returns a list of sensors that meet the passed-in parameters.",
-                        "id": "Filtered Sensors",
-                        "parameters": [
-                           { "name": "eventIds", "type": "comma separated string", "description": "Comma separated list of event IDs (ex: '1,2,3' or '1')", "optional": true, "value": "" },
-                           { "name": "eventTypeIDs", "type": "comma separated string", "description": "Comma separated list of event type IDs", "optional": true, "value": "" },
-                           { "name": "eventStatusID", "type": "number", "description": "Id of the event status", "optional": true, "value": "" },
-                           { "name": "states", "type": "comma separated string", "description": "Comma separated list of state abbreviations", "optional": true, "value": "" },
-                           { "name": "counties", "type": "comma separated string", "description": "Comma separated list of county names (Include 'County' at the end, ex: 'Washington County')", "optional": true, "value": "" },
-                           { "name": "statusIDs", "type": "comma separated string", "description": "Comma separated list of sensor status IDs", "optional": true, "value": "" },
-                           { "name": "collectionConditionIDs", "type": "comma separated string", "description": "Comma separated list of instrument collection condition IDs", "optional": true, "value": "" },
-                           { "name": "deploymentTypeIDs", "type": "comma separated string", "description": "Comma separated list of deployment type IDs", "optional": true, "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/instruments/{1}/fullinstrument{0}",
-                        "description": "This service returns a list of sensors with their associated sensor statuses (instrument_status). (response can only be returned as .json)",
-                        "id": "Full Sensors",
-                        "parameters": [
-                           { "name": "sensorId", "type": "number", "description": "Id of the sensor", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/sites/{1}/sitefullinstrumentlist{0}",
-                        "description": "This service returns a list of sensors with their associated sensor statuses (instrument_status) that were deployed at a site. (response can only be returned as .json).",
-                        "id": "Site Full Sensors",
-                        "parameters": [
-                           { "name": "siteId", "type": "number", "description": "Id of the site", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region instrument status (22)
-        {
-            "name": "Instrument Status",
-            "description": "The instrument status resource represents a status that a sensor can have.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/instrumentstatus{0}",
-                        "description": "This service returns a list of instrument statuses.",
-                        "id": "All Instrument Statuses",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/instrumentstatus/{1}{0}",
-                        "description": "This service returns an instrument status by it's ID.",
-                        "id": "An Instrument Status",
-                        "parameters": [
-                           { "name": "instStatusId", "type": "number", "description": "Id of instrument status requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/instruments/{1}/InstrumentStatusLog{0}",
-                        "description": "This service returns a list of all the instrument statuses that a sensor has in descending order (most recent first).",
-                        "id": "Instrument Status Log",
-                        "parameters": [
-                           { "name": "sensorId", "type": "number", "description": "Id of the sensor", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/instruments/{1}/instrumentstatus{0}",
-                        "description": "This service returns the most recent instrument status of a sensor.",
-                        "id": "Sensor Instrument Status",
-                        "parameters": [
-                           { "name": "sensorId", "type": "number", "description": "Id of the sensor", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region land owner contact (23)
-        {
-            "name": "Land Owner Contact",
-            "description": "The land owner contact resource represents a land owner that can be associated with a site. Requires authentication.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/LandOwners{0}",
-                        "description": "This service returns a list of land owners. Requires authentication.",
-                        "id": "All Land Owners",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/LandOwners/{1}{0}",
-                        "description": "This service returns a land owner by it's ID. Requires authentication.",
-                        "id": "A Land Owner",
-                        "parameters": [
-                           { "name": "landOwnerId", "type": "number", "description": "Id of land owner requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/sites/{1}/landowner{0}",
-                        "description": "This service returns a land owner associated with a site. Requires authentication.",
-                        "id": "Site Land Owner",
-                        "parameters": [
-                           { "name": "siteId", "type": "number", "description": "Id of the site", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region marker (24)
-        {
-            "name": "Marker",
-            "description": "The marker resource represents a marker that can be associated with a hwm.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/markers{0}",
-                        "description": "This service returns a list of markers.",
-                        "id": "All Markers",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/markers/{1}{0}",
-                        "description": "This service returns a marker by it's ID.",
-                        "id": "A Marker",
-                        "parameters": [
-                           { "name": "markerId", "type": "number", "description": "Id of marker requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/hwms/{1}/marker{0}",
-                        "description": "This service returns a marker associated with a hwm.",
-                        "id": "HWM Marker",
-                        "parameters": [
-                           { "name": "hwmId", "type": "number", "description": "Id of the hwm", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region member (25)
-        {
-            "name": "Member",
-            "description": "The member resource represents a member that can be the creator of an event, a site, hwm, sensor, file, and an objective point. Requires authentication.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/members{0}",
-                        "description": "This service returns a list of members.Requires authentication.",
-                        "id": "All Members",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/members/{1}{0}",
-                        "description": "This service returns a member by it's ID. Requires authentication.",
-                        "id": "A Member",
-                        "parameters": [
-                           { "name": "memberId", "type": "number", "description": "Id of member requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/members/GetMemberName/{1}{0}",
-                        "description": "This service returns a member name. Does not require authentication.",
-                        "id": "Member Name",
-                        "parameters": [
-                           { "name": "memberId", "type": "number", "description": "Id of the member", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/agencies/{1}/members{0}",
-                        "description": "This service returns a list of members that are in the given agency. Requires authentication.",
-                        "id": "Agency Members",
-                        "parameters": [
-                           { "name": "agencyId", "type": "number", "description": "Id of the agency", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/roles/{1}/members{0}",
-                        "description": "This service returns a list of members that have the given role. Requires authentication.",
-                        "id": "Role Members",
-                        "parameters": [
-                           { "name": "roleId", "type": "number", "description": "Id of the role", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/events/{1}/eventcoordinator{0}",
-                        "description": "This service returns a member that is the coordinator for an event. Requires authentication.",
-                        "id": "Event Coordinator",
-                        "parameters": [
-                           { "name": "eventId", "type": "number", "description": "Id of the event", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/approvals/{1}/approvingofficial{0}",
-                        "description": "This service returns a member that created an approval. Requires authentication.",
-                        "id": "Approving Official",
-                        "parameters": [
-                           { "name": "approvalId", "type": "number", "description": "Id of the approval", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/datafiles/{1}/processor{0}",
-                        "description": "This service returns a member that processed a data file. Requires authentication.",
-                        "id": "Data File Processor",
-                        "parameters": [
-                           { "name": "dataFileId", "type": "number", "description": "Id of the data file", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/peaksummaries/{1}/processor{0}",
-                        "description": "This service returns a member that created a peak summary. Requires authentication.",
-                        "id": "Peak Summary Processor",
-                        "parameters": [
-                           { "name": "peakSummaryId", "type": "number", "description": "Id of the peak summary", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/events/{1}/members{0}",
-                        "description": "This service returns a list of members that have deployed or retrieved a sensor, and/or flagged or surveyed a hwm for an event. Requires authentication.",
-                        "id": "Event Members",
-                        "parameters": [
-                           { "name": "eventId", "type": "number", "description": "Id of the event", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region network name (26)
-        {
-            "name": "Network Name",
-            "description": "The netowrk name resource represents the network names that can be associated with a site.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/networknames{0}",
-                        "description": "This service returns a list of network names.",
-                        "id": "All Network Names",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/networknames/{1}{0}",
-                        "description": "This service returns a network name by it's ID.",
-                        "id": "A Network Name",
-                        "parameters": [
-                           { "name": "networkNameId", "type": "number", "description": "Id of network name requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/sites/{1}/networknames{0}",
-                        "description": "This service returns a list of network names associated with a site.",
-                        "id": "Site Network Names",
-                        "parameters": [
-                           { "name": "siteId", "type": "number", "description": "Id of the site", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region network name (27)
-        {
-            "name": "Network Type",
-            "description": "The netowrk type resource represents the network types that can be associated with a site.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/networktypes{0}",
-                        "description": "This service returns a list of network types.",
-                        "id": "All Network Types",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/networktypes/{1}{0}",
-                        "description": "This service returns a network type by it's ID.",
-                        "id": "A Network Type",
-                        "parameters": [
-                           { "name": "networkTypeId", "type": "number", "description": "Id of network type requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/sites/{1}/networktypes{0}",
-                        "description": "This service returns a list of network types associated with a site.",
-                        "id": "Site Network Types",
-                        "parameters": [
-                           { "name": "siteId", "type": "number", "description": "Id of the site", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region objective point  (28)
-        {
-            "name": "Objective Point",
-            "description": "The objective point (aka: datum location or referenece point) resource represents the objective points that can be associated with a site.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/objectivepoints{0}",
-                        "description": "This service returns a list of objective points.",
-                        "id": "All Objective Points",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    },
-                    {
-                        "uri": "/objectivepoints/{1}{0}",
-                        "description": "This service returns an objective point by it's ID.",
-                        "id": "An Objective Point",
-                        "parameters": [
-                           { "name": "objectivePointId", "type": "number", "description": "Id of objective point requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    },
-                    {
-                        "uri": "/verticaldatums/{1}/objectivepoints{0}",
-                        "description": "This service returns a list of objective points with a vertical datum.",
-                        "id": "Vertical Datum Objective Point",
-                        "parameters": [
-                           { "name": "vdatumId", "type": "number", "description": "Id of the vertical datum", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    },
-                    {
-                        "uri": "/sites/{1}/objectivepoints{0}",
-                        "description": "This service returns a list of objective points at a site.",
-                        "id": "Site Objective Point",
-                        "parameters": [
-                           { "name": "siteId", "type": "number", "description": "Id of the site", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json", ".geojson"],
-                        "selectedMedia": ".json",
-                        "showMap": true
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region objective point type (29)
-        {
-            "name": "Objective Point Type",
-            "description": "The objective point type resource represents a objective point type that can be added to a objective point.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/optypes{0}",
-                        "description": "This service returns a list of objective point types.",
-                        "id": "All Objective Point Types",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/optypes/{1}{0}",
-                        "description": "This service returns a objective point type by it's ID.",
-                        "id": "An Objective Point Type",
-                        "parameters": [
-                           { "name": "objectivePointTypeId", "type": "number", "description": "Id of objective point type requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/objectivepoints/{1}/optype{0}",
-                        "description": "This service returns an objective point type for a objective point.",
-                        "id": "Objective Point OP Type",
-                        "parameters": [
-                           { "name": "objectivePointId", "type": "number", "description": "Id of the hwm", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region op Control Identifier  (30)
-        {
-            "name": "OP Control Identifier",
-            "description": "The op control identifier resource represents the op control identifier that can be associated with a objective point (aka: datum location/reference point).",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/opcontrolidentifiers{0}",
-                        "description": "This service returns a list of op control identifiers.",
-                        "id": "All OP Control Identifiers",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/opcontrolidentifiers/{1}{0}",
-                        "description": "This service returns an op control identifier by it's ID.",
-                        "id": "An OP Control Identifier",
-                        "parameters": [
-                           { "name": "opControlId", "type": "number", "description": "Id of op control identifier requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/objectivepoints/{1}/opcontrols{0}",
-                        "description": "This service returns a list of op control identifiers for an objective point.",
-                        "id": "Objective Point OP Control Identifiers",
-                        "parameters": [
-                           { "name": "objectivePointId", "type": "number", "description": "Id of the objective point", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region op measurements  (31)
-        {
-            "name": "OP Measurement",
-            "description": "The op measurement resource represents the op measurement that can be associated with an instrument's status and objective point (aka: datum location/reference point).",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/opmeasurements{0}",
-                        "description": "This service returns a list of op measurements.",
-                        "id": "All OP Measurements",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/opmeasurements/{1}{0}",
-                        "description": "This service returns an op measurement by it's ID.",
-                        "id": "An OP Measurement",
-                        "parameters": [
-                           { "name": "opMeasurementId", "type": "number", "description": "Id of op measurement requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/objectivepoints/{1}/opmeasurements{0}",
-                        "description": "This service returns a list of op measurements for an objective point.",
-                        "id": "Objective Point OP Measurements",
-                        "parameters": [
-                           { "name": "objectivePointId", "type": "number", "description": "Id of the objective point", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/instrumentstatus/{1}/opmeasurements{0}",
-                        "description": "This service returns a list of op measurements for an instrument status.",
-                        "id": "Instrument Status OP Measurements",
-                        "parameters": [
-                           { "name": "instrumentStatusId", "type": "number", "description": "Id of the instrument status", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region op quality  (32)
-        {
-            "name": "OP Quality",
-            "description": "The op quality resource represents the op quality that can be applied to an objective point (aka: datum location/reference point).",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/objectivepointqualities{0}",
-                        "description": "This service returns a list of op qualities.",
-                        "id": "All OP Qualities",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/objectivepointqualities/{1}{0}",
-                        "description": "This service returns an op quality by it's ID.",
-                        "id": "An OP Quality",
-                        "parameters": [
-                           { "name": "opqualityId", "type": "number", "description": "Id of op quality requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/objectivepoints/{1}/quality{0}",
-                        "description": "This service returns an op quality for an objective point.",
-                        "id": "Objective Point OP Quality",
-                        "parameters": [
-                           { "name": "objectivePointId", "type": "number", "description": "Id of the objective point", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region peak summary  (33)
-        {
-            "name": "Peak Summary",
-            "description": "The peak summary resource represents the peak summary that can be created using hwms and data file information for a site during an event.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/peaksummaries{0}",
-                        "description": "This service returns a list of peak summaries.",
-                        "id": "All Peak Summaries",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/peaksummaries/{1}{0}",
-                        "description": "This service returns a peak summary by it's ID.",
-                        "id": "A Peak Summary",
-                        "parameters": [
-                           { "name": "peakSummaryId", "type": "number", "description": "Id of peak summary requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/hwms/{1}/peaksummary{0}",
-                        "description": "This service returns a peak summary for a hwm. If unauthorized, only approved hwm will return a peak.",
-                        "id": "HWM Peak Summary",
-                        "parameters": [
-                           { "name": "hwmId", "type": "number", "description": "Id of the hwm", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/datafiles/{1}/peaksummary{0}",
-                        "description": "This service returns an peak summary for a data file. If unauthorized, only approved data file will return a peak.",
-                        "id": "Data File Peak Summary",
-                        "parameters": [
-                           { "name": "dataFileId", "type": "number", "description": "Id of the data file", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/events/{1}/peaksummaries{0}",
-                        "description": "This service returns a list of peak summaries for an event.",
-                        "id": "Event Peak Summaries",
-                        "parameters": [
-                           { "name": "eventId", "type": "number", "description": "Id of the event", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/sites/{1}/peaksummaries{0}",
-                        "description": "This service returns a list of peak summaries for a site.",
-                        "id": "Site Peak Summaries",
-                        "parameters": [
-                           { "name": "siteId", "type": "number", "description": "Id of the site", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/sites/{1}/peaksummaryview{0}",
-                        "description": "This service returns a list of peak summaries for a site including event information.",
-                        "id": "Site Peak Summary View",
-                        "parameters": [
-                           { "name": "siteId", "type": "number", "description": "Id of the site", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/PeakSummaries/FilteredPeaks{0}?Event={1}&EventType={2}&EventStatus={3}&States={4}&County={5}&StartDate={6}&EndDate={7}",
-                        "description": "This service returns a list of peak summaries including site information that meet the passed-in parameters.",
-                        "id": "Filtered Peak Summaries",
-                        "parameters": [
-                           { "name": "eventIds", "type": "comma separated string", "description": "Comma separated list of event IDs (ex: '1,2,3' or '1')", "optional": true, "value": "" },
-                           { "name": "eventTypeIDs", "type": "comma separated string", "description": "Comma separated list of event type IDs", "optional": true, "value": "" },
-                           { "name": "eventStatusID", "type": "number", "description": "Id of the event status", "optional": true, "value": "" },
-                           { "name": "states", "type": "comma separated string", "description": "Comma separated list of state abbreviation", "optional": true, "value": "" },
-                           { "name": "counties", "type": "comma separated string", "description": "Comma separated list of county names (include 'County', ex: 'Washington County')", "optional": true, "value": "" },
-                           { "name": "startDate", "type": "date", "description": "Date to start searching (ex with format: '05/20/2015')", "optional": true, "value": "" },
-                           { "name": "endDate", "type": "date", "description": "Date to end searching (ex with format: '07/20/2015')", "optional": true, "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region Report Metrics  (34)
-        {
-            "name": "Report Metrics",
-            "description": "The report metrics resource represents the reports that can be created to track activity related to an event.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/reportingmetrics{0}",
-                        "description": "This service returns a list of reporting metrics.",
-                        "id": "All Reports",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/reportingmetrics/{1}{0}",
-                        "description": "This service returns a reporting metrics by it's ID.",
-                        "id": "A Report",
-                        "parameters": [
-                           { "name": "reportId", "type": "number", "description": "Id of report requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/members/{1}/reports{0}",
-                        "description": "This service returns a list of report metrics that a member submitted.",
-                        "id": "Member Reports",
-                        "parameters": [
-                           { "name": "memberId", "type": "number", "description": "Id of the member", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/events/{1}/reports{0}",
-                        "description": "This service returns a list of report metrics that were submitted for an event.",
-                        "id": "Event Reports",
-                        "parameters": [
-                           { "name": "eventId", "type": "number", "description": "Id of the event", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/reportingmetrics/reportsbydate{0}?Date={1}",
-                        "description": "This service returns a list of report metrics that were submitted on a given date.",
-                        "id": "Date Reports",
-                        "parameters": [
-                           { "name": "aDate", "type": "date", "description": "Date report was submitted. Format: 'mm/dd/yyyy'", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/reportingmetrics{0}?Event={1}&State={2}",
-                        "description": "This service returns a list of report metrics that were submitted for an event within a given state.",
-                        "id": "Event State Reports",
-                        "parameters": [
-                           { "name": "eventId", "type": "number", "description": "Id of the event", "value": "" },
-                           { "name": "stateAbbrev", "type": "number", "description": "Abbreviation of the state", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/reportingmetrics/filteredreports{0}?Event={2}&States={3}&Date={1}",
-                        "description": "This service returns a list of report metrics that meet the passed-in parameters.",
-                        "id": "Filtered Reports",
-                        "parameters": [
-                           { "name": "aDate", "type": "date", "description": "Date report was submitted. Format: 'mm/dd/yyyy'", "value": "" },
-                           { "name": "eventId", "type": "number", "description": "Id of the event", "optional": true, "value": "" },
-                           { "name": "stateNames", "type": "comma separated string", "description": "Comma separated list of state abbreviation", "optional": true, "value": "" }                           
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/ReportResource/{1}{0}",
-                        "description": "This service returns a report model with a list of report contacts included. Only returns in json.",
-                        "id": "Report Model",
-                        "parameters": [
-                           { "name": "reportId", "type": "number", "description": "Id of the report", "value": "" }    
-                        ],
-                        "availableMedia": [".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/ReportResource/FilteredReportModel{0}?Event={1}&States={3}&Date={2}",
-                        "description": "This service returns a list of report models, with a list of report contacts included, that meet the passed-in parameters. Only returns in json.",
-                        "id": "Filtered Report Models",
-                        "parameters": [
-                           { "name": "eventId", "type": "number", "description": "Id of the event", "value": "" },                           
-                           { "name": "aDate", "type": "date", "description": "Date report was submitted. Format: 'mm/dd/yyyy'", "value": "" },
-                           { "name": "stateNames", "type": "comma separated string", "description": "Comma separated list of state abbreviation", "optional": true, "value": "" }
-                        ],
-                        "availableMedia": [".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region role (35)
+        //#region role (17)
         {
             "name": "Role",
             "description": "The role resource represents the role that is applied to each member.",
@@ -2167,9 +950,9 @@ configuration.resources =
             }]
         },
         //#endregion
-        //#region sensor brand (36)
+        //#region section (18)
         {
-            "name": "Sensor Brand",
+            "name": "Section",
             "description": "The sensor brand resource represents a sensor brand that is associated with a sensor.",
             "methods": [{
                 "type": "GET",
@@ -2206,56 +989,7 @@ configuration.resources =
             }]
         },
         //#endregion
-        //#region sensor type (37)
-        {
-            "name": "Sensor Type",
-            "description": "The sensor type resource represents a sensor type that is associated with a sensor.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/sensortypes{0}",
-                        "description": "This service returns a list of sensor types. Includes a list of deployment types for each sensor type.",
-                        "id": "All Sensor Types",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/sensortypes/{1}{0}",
-                        "description": "This service returns a sensor type by it's ID.",
-                        "id": "A Sensor Type",
-                        "parameters": [
-                           { "name": "sensorTypeId", "type": "number", "description": "Id of sensor type requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/instruments/{1}/sensortype{0}",
-                        "description": "This service returns the sensor type for a sensor.",
-                        "id": "Sensor Sensor type",
-                        "parameters": [
-                           { "name": "sensorId", "type": "number", "description": "Id of the sensor", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/deploymenttypes/{1}/sensortype{0}",
-                        "description": "This service returns the sensor type for a deployment type.",
-                        "id": "Deployment Type Sensor Type",
-                        "parameters": [
-                           { "name": "deploymentTypeId", "type": "number", "description": "Id of the deployment type", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region site (38)
+        //#region site (19)
         {
             "name": "Site",
             "description": "The site resource represents a location where hwms and/or sensors can be deployed at for an event.",
@@ -2440,9 +1174,9 @@ configuration.resources =
             }]
         },
         //#endregion
-        //#region site housing (39)
+        //#region status (20)
         {
-            "name": "Site Housing",
+            "name": "Site Status",
             "description": "The site housing resource represents a site housing that is installed at a site.",
             "methods": [{
                 "type": "GET",
@@ -2479,209 +1213,7 @@ configuration.resources =
             }]
         },
         //#endregion
-        //#region source (40)
-        {
-            "name": "Source",
-            "description": "The source resource represents a source that is the photo file source. Authentication is required.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/sources{0}",
-                        "description": "This service returns a list of sources. Authentication is required.",
-                        "id": "All Sources",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/sources/{1}{0}",
-                        "description": "This service returns a source by it's ID. Authentication is required.",
-                        "id": "A Source",
-                        "parameters": [
-                           { "name": "sourceId", "type": "number", "description": "Id of source requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/agencies/{1}/sources{0}",
-                        "description": "This service returns a list of sources with the given agency. Authentication is required.",
-                        "id": "Agency Sources",
-                        "parameters": [
-                           { "name": "agencyId", "type": "number", "description": "Id of the agency", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/files/{1}/source{0}",
-                        "description": "This service returns a source that is the source photographer of a photo file. Authentication is required.",
-                        "id": "File Source",
-                        "parameters": [
-                           { "name": "fileId", "type": "number", "description": "Id of the file", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region state (41)
-        {
-            "name": "State",
-            "description": "The state resource represents a state in which a site is created.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/states{0}",
-                        "description": "This service returns a list of states.",
-                        "id": "All States",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/states/{1}{0}",
-                        "description": "This service returns a state by it's ID.",
-                        "id": "A State",
-                        "parameters": [
-                           { "name": "stateId", "type": "number", "description": "Id of state requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/sites/{1}/states{0}",
-                        "description": "This service returns a list of states that have sites.",
-                        "id": "Site States",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region status type (42)
-        {
-            "name": "Status Type",
-            "description": "The status type resource represents a status type that a sensor has.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/statustypes{0}",
-                        "description": "This service returns a list of status types.",
-                        "id": "All Status Types",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/statustypes/{1}{0}",
-                        "description": "This service returns a status type by it's ID.",
-                        "id": "A Status Type",
-                        "parameters": [
-                           { "name": "statusTypeId", "type": "number", "description": "Id of status type requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/instrumentstatus/{1}/status{0}",
-                        "description": "This service returns a status type for the given instrument status (each sensor can have multiple instrument statuses, ex: deployed, retrieved).",
-                        "id": "Instrument Status Status Type",
-                        "parameters": [
-                            { "name": "instrumentStatusId", "type": "number", "description": "Id of instrument status requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region vertical collection method (43)
-        {
-            "name": "Vertical Collection Method",
-            "description": "The vertical collection method resource represents a vertical collection method that is associated with a hwm.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/verticalmethods{0}",
-                        "description": "This service returns a list of vertical collection methods.",
-                        "id": "All Vertical Collection Methods",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/verticalmethods/{1}{0}",
-                        "description": "This service returns a vertical collection method by it's ID.",
-                        "id": "A Vertical Collection Method",
-                        "parameters": [
-                           { "name": "vCollectMethodId", "type": "number", "description": "Id of vertical collection method requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/hwms/{1}/verticalmethod{0}",
-                        "description": "This service returns the vertical collection method for a hwm.",
-                        "id": "HWM Vertical Collection Method",
-                        "parameters": [
-                            { "name": "hwmId", "type": "number", "description": "Id of hwm requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        },
-        //#endregion
-        //#region vertical datum (44)
-        {
-            "name": "Vertical Datum",
-            "description": "The vertical datum resource represents a vertical datum that is associated with a site, objective point/datum location and hwm.",
-            "methods": [{
-                "type": "GET",
-                "uriList": [
-                    {
-                        "uri": "/verticaldatums{0}",
-                        "description": "This service returns a list of vertical datums.",
-                        "id": "All Vertical Datums",
-                        "parameters": [],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/verticaldatums/{1}{0}",
-                        "description": "This service returns a vertical datum by it's ID.",
-                        "id": "A Vertical Datum",
-                        "parameters": [
-                           { "name": "vDatumId", "type": "number", "description": "Id of vertical datum requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/hwms/{1}/vdatum{0}",
-                        "description": "This service returns the vertical datum for a hwm",
-                        "id": "HWM Vertical Datum",
-                        "parameters": [
-                            { "name": "hwmId", "type": "number", "description": "Id of hwm requested", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    }
-                ]
-            }]
-        }
-        //#endregion
+  
     ]
 configuration.basemaps =
 {

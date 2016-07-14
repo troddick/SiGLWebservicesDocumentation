@@ -1,5 +1,5 @@
 (function () {
     'use strict';
-    angular.module('STN.Services', []);
+    angular.module('SiGL.Services', []);
 })();
 //# sourceMappingURL=service.module.js.map

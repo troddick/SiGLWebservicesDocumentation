@@ -1,7 +1,7 @@
 {
-    "name": "STN_WebService_Documentation",
+    "name": "SiGL_WebService_Documentation",
     "version": "v1",
-    "homepage": "https://github.com/USGS-WiM/STNWebserviceDocumentation",
+    "homepage": "https://github.com/USGS-WiM/SiGLWebservicesDocumentation",
     "repo": "borisyankov/DefinitelyTyped",
     "ref": "master",
     "path": "typings",

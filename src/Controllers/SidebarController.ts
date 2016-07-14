@@ -23,7 +23,7 @@
 //04.14.2015 jkn - Created
 
 //Imports"
-module STN.Controllers {
+module SiGL.Controllers {
     'use strinct';
     interface ISidebarControllerScope extends ng.IScope {
         vm: SidebarController;
@@ -44,7 +44,7 @@ module STN.Controllers {
         
         //Constructor
         //-+-+-+-+-+-+-+-+-+-+-+-
-        static $inject = ['$scope','STN.Services.ResourceService'];
+        static $inject = ['$scope','SiGL.Services.ResourceService'];
         constructor($scope: ISidebarControllerScope, private resourceService:Services.IResourceService) {
             $scope.vm = this; 
             this._onSelectedResourceHandler = new WiM.Event.EventHandler<WiM.Event.EventArgs>(() => {
@@ -90,8 +90,8 @@ module STN.Controllers {
     }//end class
 
 
-    angular.module('STN.Controllers')
-        .controller('STN.Controllers.SidebarController', SidebarController)
+    angular.module('SiGL.Controllers')
+        .controller('SiGL.Controllers.SidebarController', SidebarController)
     
 }//end module
  

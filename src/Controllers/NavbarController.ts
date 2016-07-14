@@ -23,7 +23,7 @@
 //04.14.2015 jkn - Created
 
 //Imports"
-module STN.Controllers {
+module SiGL.Controllers {
     'use strinct';
     interface INavbarControllerScope extends ng.IScope {
         vm: NavbarController;
@@ -128,8 +128,8 @@ module STN.Controllers {
         BUILD = 5
     }
 
-    angular.module('STN.Controllers')
-        .controller('STN.Controllers.NavbarController', NavbarController)
+    angular.module('SiGL.Controllers')
+        .controller('SiGL.Controllers.NavbarController', NavbarController)
     
 }//end module
  

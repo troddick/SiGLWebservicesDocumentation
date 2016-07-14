@@ -23,7 +23,7 @@
 //04.14.2015 jkn - Created
 
 //Imports"
-module STN.Controllers {
+module SiGL.Controllers {
     'use strinct';
     interface IMainControllerScope extends ng.IScope {
         vm: MainController;
@@ -127,10 +127,10 @@ module STN.Controllers {
 
         //Constructor
         //-+-+-+-+-+-+-+-+-+-+-+-
-        static $inject = ['$scope', '$filter', 'STN.Services.ResourceService', 'leafletBoundsHelpers', 'leafletData'];
+        static $inject = ['$scope', '$filter', 'SiGL.Services.ResourceService', 'leafletBoundsHelpers', 'leafletData'];
         constructor($scope: IMainControllerScope, private $filter, private Resource: Services.IResourceService, leafletBoundsHelper: any, leafletData: ILeafletData) {
             $scope.vm = this;         
-            this.selectedUri = new STN.Models.URI('');
+            this.selectedUri = new SiGL.Models.URI('');
             this.waitCursor = false;
             this.onMapWaitCursor = false;
             this.sideBarCollapsed = false;
@@ -140,7 +140,7 @@ module STN.Controllers {
 
             this._onSelectedResourceHandler = new WiM.Event.EventHandler<WiM.Event.EventArgs>(() => {
                 //clear selectedUri on resource change
-                this.selectedUri = new STN.Models.URI('');
+                this.selectedUri = new SiGL.Models.URI('');
                 this.selectedResource = Resource.SelectedResource;
             });
             Resource.onResourceChanged.subscribe(this._onSelectedResourceHandler);
@@ -357,6 +357,6 @@ module STN.Controllers {
         }
     }//end class
 
-    angular.module('STN.Controllers')
-        .controller('STN.Controllers.MainController', MainController)
+    angular.module('SiGL.Controllers')
+        .controller('SiGL.Controllers.MainController', MainController)
 }//end module

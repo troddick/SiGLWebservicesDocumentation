@@ -1,7 +1,7 @@
 //http://lgorithms.blogspot.com/2013/07/angularui-router-as-infrastructure-of.html
 //http://www.funnyant.com/angularjs-ui-router/
-var STN;
-(function (STN) {
+var SiGL;
+(function (SiGL) {
     'use strinct';
     var config = (function () {
         function config($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -16,15 +16,15 @@ var STN;
                 views: {
                     'main': {
                         templateUrl: "Views/homeview.html",
-                        controller: "STN.Controllers.MainController"
+                        controller: "SiGL.Controllers.MainController"
                     },
                     'sidebar': {
                         templateUrl: "Views/sidebarview.html",
-                        controller: "STN.Controllers.SidebarController"
+                        controller: "SiGL.Controllers.SidebarController"
                     },
                     'navbar': {
                         templateUrl: "Views/navigationview.html",
-                        controller: "STN.Controllers.NavbarController"
+                        controller: "SiGL.Controllers.NavbarController"
                     }
                 }
             }); //end main state 
@@ -34,16 +34,16 @@ var STN;
         config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
         return config;
     })(); //end class
-    angular.module('STN', [
+    angular.module('SiGL', [
         "ui.router",
         "mobile-angular-ui",
         'leaflet-directive',
-        "STN.Services",
-        "STN.Controllers",
+        "SiGL.Services",
+        "SiGL.Controllers",
         'jsonFormatter',
         'WiM.Services',
         'WiM.Event',
-        'STN.Directives'
+        'SiGL.Directives'
     ]).config(config);
-})(STN || (STN = {})); //end module 
+})(SiGL || (SiGL = {})); //end module 
 //# sourceMappingURL=config.js.map
