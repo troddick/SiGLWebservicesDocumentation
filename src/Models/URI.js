@@ -16,8 +16,8 @@
 //08.20.2014 jkn - Created
 //Imports"
 // Interface
-var STN;
-(function (STN) {
+var SiGL;
+(function (SiGL) {
     var Models;
     (function (Models) {
         var URI = (function () {
@@ -29,6 +29,6 @@ var STN;
             return URI;
         })();
         Models.URI = URI; //end class
-    })(Models = STN.Models || (STN.Models = {}));
-})(STN || (STN = {})); //end module   
+    })(Models = SiGL.Models || (SiGL.Models = {}));
+})(SiGL || (SiGL = {})); //end module   
 //# sourceMappingURL=URI.js.map

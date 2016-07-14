@@ -15,8 +15,8 @@
 //Comments
 //04.14.2015 jkn - Created
 //Imports"
-var STN;
-(function (STN) {
+var SiGL;
+(function (SiGL) {
     var Controllers;
     (function (Controllers) {
         'use strinct';
@@ -85,7 +85,7 @@ var STN;
             ProcedureType[ProcedureType["REFINE"] = 4] = "REFINE";
             ProcedureType[ProcedureType["BUILD"] = 5] = "BUILD";
         })(ProcedureType || (ProcedureType = {}));
-        angular.module('STN.Controllers').controller('STN.Controllers.NavbarController', NavbarController);
-    })(Controllers = STN.Controllers || (STN.Controllers = {}));
-})(STN || (STN = {})); //end module
+        angular.module('SiGL.Controllers').controller('SiGL.Controllers.NavbarController', NavbarController);
+    })(Controllers = SiGL.Controllers || (SiGL.Controllers = {}));
+})(SiGL || (SiGL = {})); //end module
 //# sourceMappingURL=NavbarController.js.map

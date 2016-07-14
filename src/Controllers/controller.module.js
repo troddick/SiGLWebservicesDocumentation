@@ -1,5 +1,5 @@
 (function () {
     'use strict';
-    angular.module('STN.Controllers', []);
+    angular.module('SiGL.Controllers', []);
 })();
 //# sourceMappingURL=controller.module.js.map

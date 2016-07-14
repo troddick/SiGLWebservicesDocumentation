@@ -3,7 +3,7 @@
 //http://www.funnyant.com/angularjs-ui-router/
 
 declare var configuration: any;
-module STN {
+module SiGL {
     'use strinct';
 
     class config {
@@ -18,16 +18,16 @@ module STN {
                 views: {
                     'main': {
                         templateUrl: "Views/homeview.html",
-                        controller: "STN.Controllers.MainController"
+                        controller: "SiGL.Controllers.MainController"
                     },
                     'sidebar': {
                         templateUrl: "Views/sidebarview.html",  
-                        controller: "STN.Controllers.SidebarController"
+                        controller: "SiGL.Controllers.SidebarController"
 
                     },
                     'navbar': {
                         templateUrl: "Views/navigationview.html",
-                        controller: "STN.Controllers.NavbarController"
+                        controller: "SiGL.Controllers.NavbarController"
                     }
                 }
                 })//end main state 
@@ -38,12 +38,12 @@ module STN {
         }//end constructor
     }//end class
 
-    angular.module('STN',[
+    angular.module('SiGL',[
         "ui.router", "mobile-angular-ui",
         'leaflet-directive',
-        "STN.Services",
-        "STN.Controllers",
-        'jsonFormatter','WiM.Services', 'WiM.Event', 'STN.Directives'
+        "SiGL.Services",
+        "SiGL.Controllers",
+        'jsonFormatter', 'WiM.Services', 'WiM.Event', 'SiGL.Directives'
         ])
         .config(config);
 }//end module 

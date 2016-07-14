@@ -25,7 +25,7 @@
 //04.15.2015 jkn - Created
 
 //Import
-module STN.Directives {
+module SiGL.Directives {
     'use string';
     interface IAboutControllerScope extends ng.IScope {
         vm: IAboutController;
@@ -89,6 +89,6 @@ module STN.Directives {
         }//end link
     }//end UrlDirective
 
-    angular.module('STN.Directives', [])
+    angular.module('SiGL.Directives', [])
         .directive('about', wimAbout.instance);
 }//end module 

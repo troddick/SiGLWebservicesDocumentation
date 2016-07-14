@@ -1,7 +1,7 @@
 {
-  "name": "STN_WebService_Documentation",
+  "name": "SiGL_WebService_Documentation",
   "version": "1.2.3",
-  "homepage": "https://github.com/USGS-WiM/STNWebserviceDocumentation",
+  "homepage": "https://github.com/USGS-WiM/SiGLWebservicesDocumentation",
   "authors": [
     "Jeremy Newson <jknewson@usgs.gov>",
     "Martyn Smith <marsmith@usgs.gov>",

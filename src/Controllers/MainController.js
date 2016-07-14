@@ -15,8 +15,8 @@
 //Comments
 //04.14.2015 jkn - Created
 //Imports"
-var STN;
-(function (STN) {
+var SiGL;
+(function (SiGL) {
     var Controllers;
     (function (Controllers) {
         'use strinct';
@@ -53,7 +53,7 @@ var STN;
                 this.markers = null;
                 this.geojson = null;
                 $scope.vm = this;
-                this.selectedUri = new STN.Models.URI('');
+                this.selectedUri = new SiGL.Models.URI('');
                 this.waitCursor = false;
                 this.onMapWaitCursor = false;
                 this.sideBarCollapsed = false;
@@ -62,7 +62,7 @@ var STN;
                 this.servicesBaseURL = configuration.baseurls['services'];
                 this._onSelectedResourceHandler = new WiM.Event.EventHandler(function () {
                     //clear selectedUri on resource change
-                    _this.selectedUri = new STN.Models.URI('');
+                    _this.selectedUri = new SiGL.Models.URI('');
                     _this.selectedResource = Resource.SelectedResource;
                 });
                 Resource.onResourceChanged.subscribe(this._onSelectedResourceHandler);
@@ -236,10 +236,10 @@ var STN;
             };
             //Constructor
             //-+-+-+-+-+-+-+-+-+-+-+-
-            MainController.$inject = ['$scope', '$filter', 'STN.Services.ResourceService', 'leafletBoundsHelpers', 'leafletData'];
+            MainController.$inject = ['$scope', '$filter', 'SiGL.Services.ResourceService', 'leafletBoundsHelpers', 'leafletData'];
             return MainController;
         })(); //end class
-        angular.module('STN.Controllers').controller('STN.Controllers.MainController', MainController);
-    })(Controllers = STN.Controllers || (STN.Controllers = {}));
-})(STN || (STN = {})); //end module
+        angular.module('SiGL.Controllers').controller('SiGL.Controllers.MainController', MainController);
+    })(Controllers = SiGL.Controllers || (SiGL.Controllers = {}));
+})(SiGL || (SiGL = {})); //end module
 //# sourceMappingURL=MainController.js.map

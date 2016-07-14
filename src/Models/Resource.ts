@@ -22,7 +22,7 @@
 
 //Imports"
 // Interface
-module STN.Models {
+module SiGL.Models {
     export interface IResource {
         name: string;
         description: string;
