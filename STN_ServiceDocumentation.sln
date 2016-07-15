@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.40302.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STN_ServiceDocumentation", "STN_ServiceDocumentation.csproj", "{B57D62E4-D3E3-48C0-B9C6-A514457AB60E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiGLServiceDocumentation", "SiGLServiceDocumentation.csproj", "{B57D62E4-D3E3-48C0-B9C6-A514457AB60E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
