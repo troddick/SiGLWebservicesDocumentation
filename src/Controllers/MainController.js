@@ -76,25 +76,6 @@ var SiGL;
                 this.initMap();
                 this.leafletData = leafletData;
                 this.showOnMap = false;
-                //update lat lng on click
-                //$scope.$on('leafletDirectiveMap.click',(event, args) => {
-                //    var latlng = args.leafletEvent.latlng;
-                //    this.studyArea.lat = latlng.lat;
-                //    this.studyArea.lng = latlng.lng;
-                //    this.markers['pourpoint'] = {
-                //        lat: this.studyArea.lat,
-                //        lng: this.studyArea.lng,
-                //        focus: true
-                //    }
-                //    for (var index in this.selectedUri.parameters) {
-                //        if (this.selectedUri.parameters[index].name == "xlocation") {
-                //            this.selectedUri.parameters[index].value = latlng.lng.toFixed(4);
-                //        }
-                //        if (this.selectedUri.parameters[index].name == "ylocation") {
-                //            this.selectedUri.parameters[index].value = latlng.lat.toFixed(4);
-                //        }
-                //    }
-                //});
                 $scope.$on('leafletDirectiveMap.zoomend', function (event, args) {
                     //console.log('map zoom changed', args.leafletEvent.target._animateToZoom, 15, this.cursorStyle);
                     (args.leafletEvent.target._animateToZoom > 13) ? _this.cursorStyle = 'crosshair' : _this.cursorStyle = 'hand';
@@ -177,42 +158,29 @@ var SiGL;
                 }).finally(function () {
                     _this.onMapWaitCursor = false;
                 });
-                if (this.selectedUri.id.indexOf("HWM") > 0) {
-                    //hwm query
-                    this.geojson["onEachFeature"] = function (obj, layer) {
-                        var popupContent = '';
-                        angular.forEach(obj.properties, function (value, key) {
-                            if (key == 'hwm_id' || key == 'waterbody' || key == 'site_id' || key == 'event_id' || key == 'hwm_type_id' || key == 'hwm_quality_id' || key == 'hwm_locationdescription' || key == 'latitude_dd' || key == 'longitude_dd') {
-                                popupContent += '<strong>' + key + ': </strong>' + value + '</br>';
-                            }
-                        });
-                        layer.bindPopup(popupContent);
-                    };
-                } //if hwm
-                if (this.selectedUri.id.indexOf("Site") > 0) {
+                if (this.selectedUri.id.indexOf("Site") >= 0 && this.selectedUri.id.indexOf("Full") < 0) {
                     //site query
                     this.geojson["onEachFeature"] = function (obj, layer) {
                         var popupContent = '';
                         angular.forEach(obj.properties, function (value, key) {
-                            if (key == 'site_id' || key == 'site_no' || key == 'site_name' || key == 'site_description' || key == 'waterbody' || key == 'latitude_dd' || key == 'longitude_dd') {
+                            if (key == 'site_id' || key == 'project_id' || key == 'name' || key == 'latitude' || key == 'longitude' || key == 'state_province') {
                                 popupContent += '<strong>' + key + ': </strong>' + value + '</br>';
                             }
                         });
                         layer.bindPopup(popupContent);
                     };
-                } //if site 
-                if (this.selectedUri.id.indexOf("Objective") > 0) {
-                    //objective point query
+                }
+                if (this.selectedUri.id.indexOf("Full") >= 0) {
                     this.geojson["onEachFeature"] = function (obj, layer) {
                         var popupContent = '';
                         angular.forEach(obj.properties, function (value, key) {
-                            if (key == 'objective_point_id' || key == 'name' || key == 'description' || key == 'date_established' || key == 'site_id' || key == 'op_type_id' || key == 'latitude_dd' || key == 'longitude_dd') {
+                            if (key == 'SiteId' || key == 'Name' || key == 'latitude' || key == 'longitude' || key == 'State') {
                                 popupContent += '<strong>' + key + ': </strong>' + value + '</br>';
                             }
                         });
                         layer.bindPopup(popupContent);
                     };
-                } //if objective point
+                }
             };
             MainController.prototype.initMap = function () {
                 this.center = new Center(39, -100, 4);

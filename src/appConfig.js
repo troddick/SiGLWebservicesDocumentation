@@ -288,7 +288,7 @@ configuration.resources =
         //#region organization (10) "Organizations" 
         {
             "name": "Organization",
-            "description": "The organization resource represents the organization that a contact or project can be associated with.",
+            "description": "The organization resource represents the organization that a project can be associated with.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -389,7 +389,7 @@ configuration.resources =
                         "selectedMedia": ".json"
                     },
                     {
-                        "uri": "/parameters{0}?GroupName={1}",
+                        "uri": "/parameters{0}?GroupNames={1}",
                         "description": "This service returns a list of parameter types within the groups specified.",
                         "id": "Parameter Type by Group Name",
                         "parameters": [
@@ -428,7 +428,7 @@ configuration.resources =
                         "selectedMedia": ".json"
                     },
                     {
-                        "uri": "/project/{1}/projStatus{0}",
+                        "uri": "/projects/{1}/projStatus{0}",
                         "description": "This service returns a project status for a project.",
                         "id": "Project Project Status",
                         "parameters": [
@@ -467,7 +467,7 @@ configuration.resources =
                         "selectedMedia": ".json"
                     },
                     {
-                        "uri": "/project/{1}/projDuration{0}",
+                        "uri": "/projects/{1}/projDuration{0}",
                         "description": "This service returns a project duration for a project.",
                         "id": "Project Project Duration",
                         "parameters": [
@@ -616,7 +616,7 @@ configuration.resources =
                         "selectedMedia": ".json"
                     },
                     {
-                        "uri": "/resourcestypes/{1}/projects{0}",
+                        "uri": "/resourcetypes/{1}/projects{0}",
                         "description": "This service returns a list of projects where any of the project's sites has this resource type.",
                         "id": "Resource Projects",
                         "parameters": [
@@ -636,7 +636,7 @@ configuration.resources =
                         "selectedMedia": ".json"
                     },
                     {
-                        "uri": "/organizationsystem/{1}/projects{0}",
+                        "uri": "/organizationsystems/{1}/projects{0}",
                         "description": "This service returns a list of projects with this organization.",
                         "id": "Organization System Projects",
                         "parameters": [
@@ -677,7 +677,7 @@ configuration.resources =
                     },
                     {
                         "uri": "/projects/withsitecount{0}",
-                        "description": "This service returns a custom project list that contains the count of how many sites each project has.",
+                        "description": "This service returns a custom project list that contains the count of how many sites each project has and the data manager's name.",
                         "id": "Projects With SiteCount",
                         "parameters": [],
                         "availableMedia": [".xml", ".json"],
@@ -724,7 +724,7 @@ configuration.resources =
                         "selectedMedia": ".json"
                     },
                     {
-                        "uri": "/project/{1}/publications{0}",
+                        "uri": "/projects/{1}/publications{0}",
                         "description": "This service return a list of publications for a project.",
                         "id": "Project Publications",
                         "parameters": [
@@ -740,7 +740,7 @@ configuration.resources =
         //#region resource_type (17) "ResourceTypes";
         {
             "name": "Resource Type",
-            "description": "The resource type resource represents a resource type that site can have.",
+            "description": "The resource type resource represents a resource type that a site can have.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -755,7 +755,7 @@ configuration.resources =
                     {
                         "uri": "/resourcetypes/{1}{0}",
                         "description": "This service returns a resource type by it's ID.",
-                        "id": "An Resource Type",
+                        "id": "A Resource Type",
                         "parameters": [
                            { "name": "resourceTypeId", "type": "number", "description": "Id of resource type requested", "value": "" }
                         ],
@@ -894,7 +894,7 @@ configuration.resources =
                         "showMap": true
                     },
                     {
-                        "uri": "/project/{1}/ProjectFullSites{0}",
+                        "uri": "/projects/{1}/ProjectFullSites{0}",
                         "description": "This service returns a list of custom site objects that contains the site as well as it's resources, media, frequencies, and parameters.",
                         "id": "Project Full Sites",
                         "parameters": [
@@ -938,7 +938,7 @@ configuration.resources =
                         "showMap": true
                     },
                     {
-                        "uri": "/networktypes/{1}/sites{0}",
+                        "uri": "/resourcetypes/{1}/sites{0}",
                         "description": "This service returns a list of sites with this resource type.",
                         "id": "Resource Sites",
                         "parameters": [
@@ -972,7 +972,7 @@ configuration.resources =
                     },
                     {
                         "uri": "/sites/FilteredSites{0}?Duration={1}&Lake={2}&Media={3}&ProjObjs={4}&ProjOrg={5}&Parameters={6}&ResComp={7}&State={8}&Status={9}",
-                        "description": "This service returns a list of sites that meet the passed in values.",
+                        "description": "This service returns a list of sites that meet the passed-in values.",
                         "id": "Filtered Sites",
                         "parameters": [
                            { "name": "durationIDs", "type": "comma separated numbers", "description": "comma separated list of project duration IDs (ex: 1,2,3)", "optional": true, "value": "" },
@@ -996,7 +996,7 @@ configuration.resources =
         //#region status (21) "Status";
         {
             "name": "Site Status",
-            "description": "The site status resource represents a status that a site can have.",
+            "description": "The status type resource represents a status that a site can have.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
