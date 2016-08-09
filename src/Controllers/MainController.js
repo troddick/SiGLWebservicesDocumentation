@@ -59,6 +59,7 @@ var SiGL;
                 this.sideBarCollapsed = false;
                 this.downloadable = false;
                 this.applicationURL = configuration.baseurls['application'];
+                this.mapperURL = configuration.baseurls['mapper'];
                 this.servicesBaseURL = configuration.baseurls['services'];
                 this._onSelectedResourceHandler = new WiM.Event.EventHandler(function () {
                     //clear selectedUri on resource change

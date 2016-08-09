@@ -2,8 +2,8 @@
 configuration.baseurls =
 {
     'services': 'https://sigldev.wim.usgs.gov/SiGLServices',
-    //'services': 'https://localhost/STNServices2',
-    'application': 'https://sigl.wim.usgs.gov/SiGLDMS'    
+    'mapper': 'http://sigl.wim.usgs.gov/sigl/',
+    'application': 'https://sigldev.wim.usgs.gov/SiGL_DMS'    
 }
 
 configuration.resources =
@@ -538,7 +538,7 @@ configuration.resources =
                     {
                         "uri": "/datamanagers/{1}/projects{0}",
                         "description": "This service returns a list of projects that this data manager has entered into the system.",
-                        "id": "Data Managers Projects",
+                        "id": "Data Manager Projects",
                         "parameters": [
                            { "name": "dataManagerId", "type": "number", "description": "Id of the data manager", "value": "" }
                         ],
@@ -685,7 +685,7 @@ configuration.resources =
                     },
                     {
                         "uri": "/projects/GetFullProject{0}?ByScienceBase={1}&ByProject={2}",
-                        "description": "This service returns a custom project object (containing the project as well as project objectives, keywords, data hosts, organizations, contacts, and publications) by the science base id or by a project id",
+                        "description": "This service returns a custom project object (containing the project as well as project objectives, keywords, data hosts, organizations, contacts, and publications) by the science base id or by a project id.",
                         "id": "Full Project",
                         "parameters": [
                            { "name": "scienceBaseId", "type": "string", "description": "science base id if this project is from science base", "optional": true, "value": "" },

@@ -111,6 +111,7 @@ module SiGL.Controllers {
         public onMapWaitCursor: boolean;
         public showOnMap: boolean;
         public applicationURL: string;
+        public mapperURL: string;
         public servicesBaseURL: string;
 
         public mapPoint: IMapPoint = null;
@@ -136,6 +137,7 @@ module SiGL.Controllers {
             this.sideBarCollapsed = false;
             this.downloadable = false;
             this.applicationURL = configuration.baseurls['application'];
+            this.mapperURL = configuration.baseurls['mapper'];
             this.servicesBaseURL = configuration.baseurls['services'];
 
             this._onSelectedResourceHandler = new WiM.Event.EventHandler<WiM.Event.EventArgs>(() => {
