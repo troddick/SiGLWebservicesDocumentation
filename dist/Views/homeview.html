@@ -7,10 +7,14 @@
             <div ng-hide="vm.selectedResource" class="well">
                 <h3>Introduction</h3>
                 <p>
-                    The <a href="{{vm.applicationURL}}" target="_blank">SiGLDMS application</a> uses the SiGL Web Services that were created for it. When in use, the application manages interactions
-                    between the user and the services. However, the services can be directly accessed using the SiGL Service API documented here, or consumed by a custom client application using HTTP protocols.
+                    The information contained in the <a href="{{vm.mapperURL}}" target="_blank">Science in the Great Lakes Mapper</a> (SiGL) is managed by the
+                    <a href="{{vm.applicationURL}}" target="_blank">SiGL Data Management System</a> (SiGL DMS). Project managers can upload and edit their projects and spatial
+                    information directly using the SiGL DMS. For more information about the SiGL Mapper or DMS, please contact Jen Bruce (jlbruce@usgs.gov).
                 </p>
-
+                <p>
+                    The SiGL DMS uses the SiGL Web Services that were created for it. When in use, the application manages interactions between the user and the services.
+                    However, the services can be directly accessed using the SiGL Service API documented here, or consumed by a custom client application using HTTP protocols.
+                </p>
                 <p>
                     The SiGL Web Services API performs multiple high level procedures which include; database queries, geospatial queries and service requests in order to
                     compile and create simple objects that can be consumed by custom client applications. As documented by this page, which can also serve as an URL builder, the SiGL Service API is built
@@ -100,7 +104,7 @@
                                 <i class="fa fa-map"></i>&nbsp;&nbsp;Show response on map
                             </button>
                             <span ng-if="vm.selectedUri.showMap && vm.selectedUri.selectedMedia != '.geojson'" style="font-size:12px; padding-left:5px;">Use Response Format '.geojson' to see results on map below.</span>
-                           
+
                         </div>
                     </p>
 
