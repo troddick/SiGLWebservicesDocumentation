@@ -1,9 +1,9 @@
 ﻿var configuration = {}
 configuration.baseurls =
 {
-    'services': 'https://sigldev.wim.usgs.gov/SiGLServices',
+    'services': 'https://sigl.wim.usgs.gov/SiGLServices',
     'mapper': 'http://sigl.wim.usgs.gov/sigl/',
-    'application': 'https://sigldev.wim.usgs.gov/SiGL_DMS'    
+    'application': 'https://sigl.wim.usgs.gov/SiGL_DMS'    
 }
 
 configuration.resources =
@@ -1025,6 +1025,25 @@ configuration.resources =
                         "parameters": [
                            { "name": "siteId", "type": "number", "description": "Id of the site", "value": "" }
                         ],
+                        "availableMedia": [".xml", ".json"],
+                        "selectedMedia": ".json"
+                    }
+                ]
+            }]
+        },
+        //#endregion
+          //#region site_states (21) "strings";
+        {
+            "name": "Site States",
+            "description": "The site state resource represents a list of state names where sites exist.",
+            "methods": [{
+                "type": "GET",
+                "uriList": [
+                    {
+                        "uri": "/sites/StatesWithSites{0}",
+                        "description": "This service returns a list of all state names where sites exist.",
+                        "id": "All Site States",
+                        "parameters": [],
                         "availableMedia": [".xml", ".json"],
                         "selectedMedia": ".json"
                     }
