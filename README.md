@@ -1,6 +1,6 @@
-﻿# stn web service descriptions
+﻿# sigl web service descriptions
 
-> Describes the REST endpoint for STN Web Services.  It is an angular application that uses angular-ui-mobile
+> Describes the REST endpoint for SiGL Web Services.  It is an angular application that uses angular-ui-mobile
 
 > Build environment: Visual Studio 2013 with TypeScript 1.4
 
