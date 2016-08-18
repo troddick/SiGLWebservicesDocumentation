@@ -9,6 +9,8 @@ bower_components
 node_modules
 node_modules/*
 typings
+dist
+dist/*
 
 
 # Build results
@@ -158,9 +160,6 @@ Desktop.ini
 $RECYCLE.BIN/
 
 # Mac desktop service store files
-<<<<<<< HEAD
-.DS_Store
-=======
 .DS_Store
 
 #exluded folders
@@ -168,5 +167,4 @@ typings/
 bower_components/
 bin/
 obj/
-
->>>>>>> ef51a211846831e84b98b0cf58e517753b3e3111
+dist/
