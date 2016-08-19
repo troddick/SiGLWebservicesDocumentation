@@ -1,6 +1,10 @@
 ﻿var configuration = {}
 configuration.baseurls =
 {
+    //'services': 'https://sigldev.wim.usgs.gov/SiGLServices',
+    //'mapper': 'http://sigldev.wim.usgs.gov/sigl/',
+    //'application': 'https://sigldev.wim.usgs.gov/SiGL_DMS'
+
     'services': 'https://sigl.wim.usgs.gov/SiGLServices',
     'mapper': 'http://sigl.wim.usgs.gov/sigl/',
     'application': 'https://sigl.wim.usgs.gov/SiGL_DMS'    
@@ -8,12 +12,59 @@ configuration.baseurls =
 
 configuration.resources =
     [        
-        //#region contact (1) "Contacts";  --requires auth (not included)        
+        //#region contact (1) "Contacts";  
+        {
+            "name": "Contacts",
+            "description": "The contact resource represents a contact that can be associated with a project.",
+            "methods": [{
+                "type": "GET",
+                "uriList": [
+                    {
+                        "uri": "/contacts{0}",
+                        "description": "This service returns a list of all contacts.",
+                        "id": "All Contacts",
+                        "parameters": [],
+                        "availableMedia": [".xml", ".json"],
+                        "selectedMedia": ".json"
+                    },
+                    {
+                        "uri": "/contacts/{1}{0}",
+                        "description": "This service returns a contact by it's ID.",
+                        "id": "A Contact",
+                        "parameters": [
+                           { "name": "contactId", "type": "number", "description": "Id of the contact requested", "value": "" }
+                        ],
+                        "availableMedia": [".xml", ".json"],
+                        "selectedMedia": ".json"
+                    },
+                    {
+                        "uri": "/projects/{1}/contacts{0}",
+                        "description": "This service returns a list of contacts that a project has.",
+                        "id": "Project Contacts",
+                        "parameters": [
+                           { "name": "projectId", "type": "number", "description": "Id of the project requested", "value": "" }
+                        ],
+                        "availableMedia": [".xml", ".json"],
+                        "selectedMedia": ".json"
+                    },
+                    {
+                        "uri": "/OrganizationSystems/{1}/contacts{0}",
+                        "description": "This service returns a list of contacts at an organization.",
+                        "id": "Organization Contacts",
+                        "parameters": [
+                           { "name": "organizationId", "type": "number", "description": "Id of the organization requested", "value": "" }
+                        ],
+                        "availableMedia": [".xml", ".json"],
+                        "selectedMedia": ".json"
+                    }
+                ]
+            }]
+        },
         //#endregion 
         //#region data_host (2) "DataHosts";
         {
             "name": "Data Host",
-            "description": "The data host represents a data host that can be added to a site.",
+            "description": "The DATA HOST resource describes the datasets associated with a PROJECT. It includes: the entity, person, or organization that hosts or holds the dataset; a description of the data format/management system; and the URL of the data (if available online). Each individual data host is associated with a single project.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -54,7 +105,7 @@ configuration.resources =
         //#region division  (4) "Divisions";
         {
             "name": "Division",
-            "description": "The division resource represents an organization's division, if one exists.",
+            "description": "The DIVISION resource contains the secondary phrase of a organization’s name, such as a division or office (ORGANIZATION name, DIVISION name, SECTION name). A division is associated with a single organization. Multiple organizations/divisions/sections can be assigned to a single project, and multiple projects can share the same organization/division/section.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -83,7 +134,7 @@ configuration.resources =
         //#region frequency_type  (5) "Frequencies";
         {
             "name": "Frequency Type",
-            "description": "The frequency type resource represents a frequency type that can be applied to a site.",
+            "description": "The FREQUENCY TYPE resource describes how frequently a SITE was sampled. Multiple frequencies can be assigned to a single site, and multiple sites can share the same frequency type.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -122,7 +173,7 @@ configuration.resources =
         //#region keyword  (6) "Keywords";
         {
             "name": "Keyword",
-            "description": "The keyword resource represents a keyword that can be applied to a project.",
+            "description": "The KEYWORD resource contains data-manager-assigned custom words or phrases that pertain to a PROJECT. Multiple keywords can be assigned to a single project, and multiple projects can share the same keyword.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -171,7 +222,7 @@ configuration.resources =
         //#region lake (7) "Lakes";
         {
             "name": "Lake",
-            "description": "The lake resource represents a lake that a site is at.",
+            "description": "The LAKE resource identifies which Great Lake basin a SITE resides in. An individual site can only be assigned to one lake.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -210,7 +261,7 @@ configuration.resources =
         //#region media (8) "Media";
         {
             "name": "Media Type",
-            "description": "The media type resource represents media types that can be associated with a site.",
+            "description": "The MEDIA resource describes what type of media was sampled or analyzed at an individual SITE. Multiple media can be assigned to a single site, and multiple sites can share the same media.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -249,7 +300,7 @@ configuration.resources =
         //#region objective_type (9) "Objectives";
         {
             "name": "Objective Type",
-            "description": "The objective type resource represents objective types that can be associated with a project.",
+            "description": "The OBJECTIVE resource contains phrases and terms associated with a PROJECT’s goal or purpose. Multiple objectives can be assigned to a single project, and multiple projects can share the same objective.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -288,7 +339,7 @@ configuration.resources =
         //#region organization (10) "Organizations" 
         {
             "name": "Organization",
-            "description": "The organization resource represents the organization that a project can be associated with.",
+            "description": "The ORGANIZATION resource contains the first (top-level) phrase of a organization’s name (ORGANIZATION name, DIVISION name, SECTION name). Organizations can exist without divisions or sections. Multiple organizations/divisions/sections can be assigned to a single project, and multiple projects can share the same organization/division/section.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -317,7 +368,7 @@ configuration.resources =
         //#region organization_system (11) "OrganizationSystems" 
         {
             "name": "Organization System",
-            "description": "The organization system represents the structure of an organization, division, section relationship.",
+            "description": "The ORGANIZATION SYSTEM resource is the group of a single ORGANIZATION / DIVISION / SECTION combination.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -356,7 +407,7 @@ configuration.resources =
         //#region parameter (12) "Parameters";
         {
             "name": "Parameter Type",
-            "description": "The parameter type resource represents parameters that can be associated with a site.",
+            "description": "The PARAMETER TYPE resource describes what was sampled at a particular SITE. It includes the parameter group (physical, chemical, biological, microbiological, and toxicological) and the individual parameter name. Each parameter is only associated with one parameter group. Multiple parameters can be assigned to a single site, and multiple sites can share the same parameter.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -405,7 +456,7 @@ configuration.resources =
         //#region proj_status (13) "ProjectStatus";
         {
             "name": "Project Status",
-            "description": "The project status resource represents a status that can be applied to a project.",
+            "description": "The PROJECT STATUS resource describes whether a PROJECT is active or completed. Only one status can be assigned to an individual project, but multiple projects can share the same status.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -444,7 +495,7 @@ configuration.resources =
         //#region proj_duration (14) "ProjectDuration";
         {
             "name": "Project Duration",
-            "description": "The project duration resource represents a duration that can be applied to a project.",
+            "description": "The PROJECT DURATION resource describes the length of a project. Only one duration can be assigned to an individual project, but multiple projects can share the same duration.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -483,7 +534,7 @@ configuration.resources =
         //#region project (15) "Projects";
         {
             "name": "Project",
-            "description": "The project resource represents a project where data hosts, organizations, contacts, publications and sites can be added at.",
+            "description": "The PROJECT resource describes the basic information about a project. It includes: name, start date, end date, project URL (if available), description of the project, additional information (open text field), creation date, and last edited date.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -531,16 +582,6 @@ configuration.resources =
                         "id": "Contact Projects",
                         "parameters": [
                            { "name": "contactId", "type": "number", "description": "Id of the contact", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/datamanagers/{1}/projects{0}",
-                        "description": "This service returns a list of projects that this data manager has entered into the system.",
-                        "id": "Data Manager Projects",
-                        "parameters": [
-                           { "name": "dataManagerId", "type": "number", "description": "Id of the data manager", "value": "" }
                         ],
                         "availableMedia": [".xml", ".json"],
                         "selectedMedia": ".json"
@@ -701,7 +742,7 @@ configuration.resources =
         //#region publication (16) "Publications";
         {
             "name": "Publication",
-            "description": "The publication resource represents a publication that a project can have.",
+            "description": "The PUBLICATION resource describes the publications associated with a PROJECT. It includes the publication title, description, and online publication URL (if one exists). Each individual publication is associated with a single project.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -740,7 +781,7 @@ configuration.resources =
         //#region resource_type (17) "ResourceTypes";
         {
             "name": "Resource Type",
-            "description": "The resource type resource represents a resource type that a site can have.",
+            "description": "The RESOURCE TYPE resource describes where samples were taken at an individual SITE. Multiple resource types can be assigned to a single site, and multiple sites can share the same resource type.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -779,7 +820,7 @@ configuration.resources =
         //#region role (18) "Roles";
         {
             "name": "Role",
-            "description": "The role resource represents the role that is applied to each member.",
+            "description": "The ROLE resource describes the type of access an individual Data Manager has within the SiGL DMS.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -800,17 +841,8 @@ configuration.resources =
                         ],
                         "availableMedia": [".xml", ".json"],
                         "selectedMedia": ".json"
-                    },
-                    {
-                        "uri": "/datamanagers/{1}/role{0}",
-                        "description": "This service returns the role for a data manager.",
-                        "id": "Data Manager Role",
-                        "parameters": [
-                           { "name": "dataManagerId", "type": "number", "description": "Id of the data manager", "value": "" }
-                        ],
-                        "availableMedia": [".xml", ".json"],
-                        "selectedMedia": ".json"
                     }
+                    
                 ]
             }]
         },
@@ -818,7 +850,7 @@ configuration.resources =
         //#region section (19) "Sections";
         {
             "name": "Section",
-            "description": "The section resource represents an organization's section, if one exists.",
+            "description": "The SECTION resource contains the tertiary phrase of a organization’s name, such as a division or office (ORGANIZATION name, DIVISION name, SECTION name). A section is associated with a single organization/division combination. Multiple organizations/divisions/sections can be assigned to a single project, and multiple projects can share the same organization/division/section.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -847,7 +879,7 @@ configuration.resources =
         //#region site (20) "Sites";
         {
             "name": "Site",
-            "description": "The site resource represents a location in a project where specific site information is collected, along with media, frequency types, resource types, and parameter types.",
+            "description": "The SITE resource describes the basic information about a site. It includes: name, description, latitude, longitude, country, state, latitude, longitude, site description, waterbody, HUC8, sampling start date, sampling end date, sampling platform, site URL (if available), and additional information (open text field). Each individual site can only be associated with a single project, but projects can be associated with multiple sites.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -996,7 +1028,7 @@ configuration.resources =
         //#region status (21) "Status";
         {
             "name": "Site Status",
-            "description": "The status type resource represents a status that a site can have.",
+            "description": "The SITE STATUS resource describes whether a SITE is currently being sampled (active) or not (inactive). A site can only have one status.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
@@ -1035,7 +1067,7 @@ configuration.resources =
           //#region site_states (21) "strings";
         {
             "name": "Site States",
-            "description": "The site state resource represents a list of state names where sites exist.",
+            "description": "The SITE STATES resource identifies which state or province a SITE resides in. An individual site can only be assigned to one state. Only states and provinces within the Great Lakes basin are available.",
             "methods": [{
                 "type": "GET",
                 "uriList": [
